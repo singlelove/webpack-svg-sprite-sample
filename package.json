@@ -5,8 +5,8 @@
   "scripts": {
     "dev:vue": "node ./node_modules/.bin/webpack-dev-server --port 8001 --config webpack.vue.conf.js --inline --hot",
     "build:vue": "NODE_ENV=production webpack --config webpack.vue.conf.js --progress --hide-modules",
-    "dev:react": "node ./node_modules/.bin/webpack-dev-server --port 8002 --config webpack.react.conf.js --inline --hot",
-    "build:react": "NODE_ENV=production webpack --config webpack.react.conf.js --progress --hide-modules"
+    "dev:react": "webpack-dev-server --progress --port 8002 --config webpack.react.conf.js --inline --hot",
+    "build:react": "webpack --port 8002 --config webpack.react.conf.js --progress --hide-modules --hot"
   },
   "dependencies": {
     "react": "^15.0.1",
@@ -24,7 +24,7 @@
     "file-loader": "^0.8.4",
     "json-loader": "^0.5.4",
     "style-loader": "^0.13.1",
-    "svg-sprite-loader": "0.0.18",
+    "svg-sprite-loader": "^3.0.5",
     "svgo-loader": "^1.1.0",
     "url-loader": "^0.5.7",
     "vue-hot-reload-api": "^1.2.0",

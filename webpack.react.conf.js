@@ -19,7 +19,7 @@ module.exports = {
     preLoaders: [
       {
         test: /\.svg$/,
-        loader: 'svgo?' + JSON.stringify(svgoConfig)
+        loader: 'svgo-loader?' + JSON.stringify(svgoConfig)
       }
     ],
     loaders: [
@@ -38,13 +38,12 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: 'svg-sprite',
-        include: /assets\/icons/
+        loader: 'svg-sprite-loader'
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'url',
-        exclude: /assets\/icons/,
+        exclude: path.resolve(__dirname, './assets/icons/'),
         query: {
           limit: 10000,
           name: '[name].[ext]?[hash]',
